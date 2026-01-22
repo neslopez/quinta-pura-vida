@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quinta Pura Vida | Francisco Álvarez</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --verde: #2E7D6F;
+      --verde-suave: #EDF5F3;
+      --arena: #F2E8D8;
+      --oscuro: #2b2b2b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--verde-suave);
+  color: var(--oscuro);
+  line-height: 1.75;
+  font-size: 17px;
+    }
+
+    header {
+      min-height: 70vh;
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0, 0, 0, 0.932)), url('img/hero.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header img {
+      width: 140px;
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: var(--verde);
+}
+
+    .galeria {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.galeria::-webkit-scrollbar {
+  height: 8px;
+}
+
+.galeria::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.galeria img {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.04);
+}
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .contacto {
+  text-align: center;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 16px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,.2);
+}
+footer{
+ background: #1f1f1f;
+  color: #ccc;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 0.9rem;
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo-pura-vida.jpg" alt="Logo Quinta Pura Vida">
+  <h1>Quinta Pura Vida</h1>
+  <p>Un espacio de tranquilidad y armonía para disfrutar en familia o con amigos, en Francisco Álvarez.</p>
+</header>
+
+<section>
+  <h2>¿Quiénes somos?</h2>
+  <div class="info">
+    <p>Quinta Pura Vida es atendida por <strong>Jonathan</strong>, responsable del lugar, junto a su hermano <strong>Brian</strong>. Ambos se destacan por su atención cercana y personalizada, asegurándose de que cada visita sea una experiencia única, relajada y agradable.</p>
+  </div>
+</section>
+
+<section>
+  <h2>El lugar</h2>
+  <div class="datos" style="text-align:center; max-width:700px; margin:0 auto; font-size:1.05rem;">
+    <div class="dato">🌞 Capacidad para pasar el día: <strong>hasta 30 personas</strong></div>
+    <div class="dato">🛏️ Capacidad para dormir: <strong>hasta 8 personas</strong></div>
+    <div class="dato">🏊 Pileta, parque amplio y espacios verdes</div>
+    <div class="dato">🔥 Quincho con parrilla totalmente equipada</div>
+  </div>
+</section>
+
+<section>
+  <h2>Galería</h2>
+  <div class="galeria">
+    <img src="cocina-comedor.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="entrada.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="habitacion-matrimonial.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="living1.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="pileta-atardecer.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="pasillo-sala-de-estar2.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="imagen1.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="chicos-en-pileta.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="imagen12.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="pileta-atardecer.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+     <img src="Parrilla1.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+    <img src="Parrilla2.jpeg" alt="Quinta Pura Vida" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Imagen ampliada">
+</div>
+
+<section class="contacto">
+  <h2>Contacto</h2>
+  <p>Consultá disponibilidad y precios directamente por WhatsApp.</p>
+
+  <a class="btn-whatsapp"
+     href="https://wa.me/5491156184807?text=Hola%20quería%20consultar%20disponibilidad%20en%20Quinta%20Pura%20Vida"
+     target="_blank">
+     📲 Contactar por WhatsApp
+  </a>
+</section>
+
+<footer>
+  <p>📍 Francisco Álvarez, Buenos Aires</p>
+  <p>Creada por <span>@debugueandoando</span></p>
+</footer>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox').style.display = 'flex';
+    document.getElementById('lightbox-img').src = src;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+
+
